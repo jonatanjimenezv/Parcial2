@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contenido Privado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .logout-btn {
+            transition: all 0.3s ease;
+        }
+        .logout-btn:hover {
+            transform: scale(1.05);
+        }
+        .main-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        }
+    </style>
+</head>
+<body class="main-container">
+<div class="container d-flex flex-column align-items-center justify-content-center" style="height: 100vh;">
+    <div class="card shadow-lg p-5 text-center" style="width: 100%; max-width: 500px;">
+        <h1 class="mb-4 text-success" th:text="${mensaje}"></h1>
+
+        <div class="d-grid gap-3 mb-4">
+            <a href="/privado?lang=es" class="btn btn-outline-success btn-lg">
+                🇪🇸 Español
+            </a>
+            <a href="/privado?lang=en" class="btn btn-outline-success btn-lg">
+                🇬🇧 English
+            </a>
+        </div>
+
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn btn-danger logout-btn w-100 py-2">
+                🚪 Salir
+            </button>
+        </form>
+
+        <div class="mt-4 text-muted">
+            <small>Usuario autenticado - Versión 1.0</small>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

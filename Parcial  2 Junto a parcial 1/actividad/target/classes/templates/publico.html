@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contenido Público</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .language-box {
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+        .language-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .main-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+    </style>
+</head>
+<body class="main-container">
+<div class="container d-flex flex-column align-items-center justify-content-center" style="height: 100vh;">
+    <div class="card shadow-lg p-5 text-center">
+        <h1 class="mb-4 text-primary" th:text="${mensaje}"></h1>
+
+        <div class="d-grid gap-3">
+            <a href="/publico?lang=es" class="btn btn-outline-primary btn-lg language-box">
+                🇪🇸 Español
+            </a>
+            <a href="/publico?lang=en" class="btn btn-outline-primary btn-lg language-box">
+                🇬🇧 English
+            </a>
+        </div>
+
+        <div class="mt-4 text-muted">
+            <small>Acceso público - Versión 1.0</small>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
